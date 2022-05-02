@@ -9,10 +9,7 @@ function computerPlay() {
     const randomIndex = Math.floor(Math.random() * choices.length);
 
     //Use randomIndex to assign an object from our choices array to computerSelection variable
-    const computerSelection = choices[randomIndex];
-
-    //print computerSelection for testing purposes
-    console.log(computerSelection)
+    return choices[randomIndex];
 }
 
 /* Function (playRound) to play a single round. It should run the computerPlay function above to generate the computer's choice, plus prompt the user to enter a choice*/
