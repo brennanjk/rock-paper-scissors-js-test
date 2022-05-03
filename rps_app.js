@@ -78,9 +78,21 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
 
-    const playerSelection = prompt('Choose your play: rock, paper, or scissors: ').toLowerCase();
-    const computerSelection = computerPlay();
+    for (let i = 1; i < 6; i++) {
+        const playerSelection = prompt('Choose your play: rock, paper, or scissors: ').toLowerCase();
+        const computerSelection = computerPlay();
+    
+        console.log(playRound(playerSelection,computerSelection)); 
+    }
 
-    console.log(playRound(playerSelection,computerSelection));
+    if (playerScore > computerScore) {
+        console.log(`You scored ${playerScore} points, the computer scored ${computerScore} points: You win!`)
+    }
+    else if (computerScore > playerScore) {
+        console.log(`You scored ${playerScore} points, the computer scored ${computerScore} points: the computer win!`)
+    }
+    else {
+        console.log(`You scored ${playerScore} points, the computer scored ${computerScore} points: it's a tie!`)
+    }
 
 }
