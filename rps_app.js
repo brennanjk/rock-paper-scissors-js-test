@@ -78,6 +78,8 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
 
+    //loop so there are 5 rounds of play
+
     for (let i = 1; i < 6; i++) {
         const playerSelection = prompt('Choose your play: rock, paper, or scissors: ').toLowerCase();
         const computerSelection = computerPlay();
@@ -85,6 +87,7 @@ function game() {
         console.log(playRound(playerSelection,computerSelection)); 
     }
 
+    //compare scores and declare the winner or tie
     if (playerScore > computerScore) {
         console.log(`You scored ${playerScore} points, the computer scored ${computerScore} points: You win!`)
     }
@@ -94,5 +97,7 @@ function game() {
     else {
         console.log(`You scored ${playerScore} points, the computer scored ${computerScore} points: it's a tie!`)
     }
+
+
 
 }
