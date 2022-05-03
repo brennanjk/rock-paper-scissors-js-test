@@ -81,7 +81,12 @@ function game() {
     //loop so there are 5 rounds of play
 
     for (let i = 1; i < 6; i++) {
-        const playerSelection = prompt('Choose your play: rock, paper, or scissors: ').toLowerCase();
+        let playerSelection = prompt('Choose your play: rock, paper, or scissors: ').toLowerCase();
+
+        // Check that input above matches one of the objects in our choices array; if not reprompt user before continuing
+        while (choices.indexOf(playerSelection) === -1) {
+            playerSelection = prompt('Invalid choice; please enter rock, paper, or scissors: ').toLowerCase()
+        }
         const computerSelection = computerPlay();
     
         console.log(playRound(playerSelection,computerSelection)); 
