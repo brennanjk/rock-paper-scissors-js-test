@@ -76,3 +76,11 @@ function playRound(playerSelection, computerSelection) {
 
 /* Function (game) that calls our playRound function for a 5 round game. It will keep score and declare a winner at the end */
 
+function game() {
+
+    const playerSelection = prompt('Choose your play: rock, paper, or scissors: ').toLowerCase();
+    const computerSelection = computerPlay();
+
+    console.log(playRound(playerSelection,computerSelection));
+
+}
