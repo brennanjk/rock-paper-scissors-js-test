@@ -12,6 +12,10 @@ function computerPlay() {
     return choices[randomIndex];
 }
 
+//set placeholders for scores
+playerScore = 0;
+computerScore = 0;
+
 /* Function (playRound) to play a single round. It should run the computerPlay function above to generate the computer's choice, plus prompt the user to enter a choice*/
 /* It should then compare the choices and determine/display the result */
 
@@ -22,13 +26,15 @@ function playRound(playerSelection, computerSelection) {
 
         //possible outcomes based on computer choices
         if (computerSelection === 'paper') {
-            console.log(`${computerSelection} beats ${playerSelection}; the computer wins!`)
+            computerScore += 1
+            return `${computerSelection} beats ${playerSelection}; the computer wins!`
         }
         else if (computerSelection === 'scissors') {
-            console.log(`${playerSelection} beats ${computerSelection}; you win!`)
+            playerScore += 1
+            return `${playerSelection} beats ${computerSelection}; you win!`
         }
         else if (computerSelection === 'rock') {
-            console.log(`Both players chose ${playerSelection}; it's a tie!`)
+            return `Both players chose ${playerSelection}; it's a tie!`
         }
     }
 
@@ -37,13 +43,15 @@ function playRound(playerSelection, computerSelection) {
 
         //possible outcomes based on computer choices
         if (computerSelection === 'scissors') {
-            console.log(`${computerSelection} beats ${playerSelection}; the computer wins!`)
+            computerScore += 1
+            return(`${computerSelection} beats ${playerSelection}; the computer wins!`)
         }
         else if (computerSelection === 'rock') {
-            console.log(`${playerSelection} beats ${computerSelection}; you win!`)
+            playerScore += 1
+            return(`${playerSelection} beats ${computerSelection}; you win!`)
         }
         else if (computerSelection === 'paper') {
-            console.log(`Both players chose ${playerSelection}; it's a tie!`)
+            return(`Both players chose ${playerSelection}; it's a tie!`)
         } 
     }
 
@@ -52,16 +60,19 @@ function playRound(playerSelection, computerSelection) {
 
         //possible outcomes based on computer choices
         if (computerSelection === 'rock') {
-            console.log(`${computerSelection} beats ${playerSelection}; the computer wins!`)
+            computerScore += 1
+            return(`${computerSelection} beats ${playerSelection}; the computer wins!`)
         }
         else if (computerSelection === 'paper') {
-            console.log(`${playerSelection} beats ${computerSelection}; you win!`)
+            playerScore += 1
+            return(`${playerSelection} beats ${computerSelection}; you win!`)
         }
         else if (computerSelection === 'scissors') {
-            console.log(`Both players chose ${playerSelection}; it's a tie!`)
+            return(`Both players chose ${playerSelection}; it's a tie!`)
         } 
     }
 
 }
 
 /* Function (game) that calls our playRound function for a 5 round game. It will keep score and declare a winner at the end */
+
