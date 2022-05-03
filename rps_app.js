@@ -98,6 +98,8 @@ function game() {
         console.log(`You scored ${playerScore} points, the computer scored ${computerScore} points: it's a tie!`)
     }
 
-
+    //Add logic to reset both scores back to 0. This way if you play more than once the scores between games gets reset
+    playerScore -= playerScore
+    computerScore -= computerScore
 
 }
