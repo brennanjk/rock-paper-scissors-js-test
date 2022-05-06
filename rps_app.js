@@ -19,6 +19,8 @@ computerScore = 0;
 const rock_button = document.querySelector('#rock');
 const paper_button = document.querySelector('#paper');
 const scissors_button = document.querySelector('#scissors');
+const p_score = document.querySelector('#player-score');
+const c_score = document.querySelector('#computer-score')
 
 rock_button.addEventListener('click', () => {
     playRound('rock',computerPlay());
@@ -31,6 +33,9 @@ paper_button.addEventListener('click', () => {
 scissors_button.addEventListener('click', () => {
     playRound('scissors',computerPlay());
 })
+
+p_score.textContent = playerScore;
+c_score.textContent = computerScore;
 
 // Function (playRound) to play a single round. It should run the computerPlay function above to generate the computer's choice, plus prompt the user to enter a choice
 // It should then compare the choices and determine/display the result 
@@ -68,7 +73,8 @@ function playRound(playerSelection, computerSelection) {
         }
         else if (computerSelection === 'paper') {
             console.log(`Both players chose ${playerSelection}; it's a tie!`)
-        } 
+        }
+        
     }
 
     //if player chooses scissors, check what the computer chose
@@ -87,7 +93,8 @@ function playRound(playerSelection, computerSelection) {
             console.log(`Both players chose ${playerSelection}; it's a tie!`)
         } 
     }
-
+    p_score.textContent = playerScore;
+    c_score.textContent = computerScore;
 }
 
 /* Function (game) that calls our playRound function for a 5 round game. It will keep score and declare a winner at the end */
