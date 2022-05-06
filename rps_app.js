@@ -19,6 +19,7 @@ computerScore = 0;
 const rock_button = document.querySelector('#rock');
 const paper_button = document.querySelector('#paper');
 const scissors_button = document.querySelector('#scissors');
+const results = document.querySelector('#results')
 const p_score = document.querySelector('#player-score');
 const c_score = document.querySelector('#computer-score')
 
@@ -48,14 +49,14 @@ function playRound(playerSelection, computerSelection) {
         //possible outcomes based on computer choices
         if (computerSelection === 'paper') {
             computerScore += 1
-            console.log(`${computerSelection} beats ${playerSelection}; the computer wins!`)
+            results.textContent = `${computerSelection} beats ${playerSelection}; round goes to computer!`
         }
         else if (computerSelection === 'scissors') {
             playerScore += 1
-            console.log(`${playerSelection} beats ${computerSelection}; you win!`)
+            results.textContent = `${playerSelection} beats ${computerSelection}; you win this round!`
         }
         else if (computerSelection === 'rock') {
-            console.log(`Both players chose ${playerSelection}; it's a tie!`)
+            results.textContent = `Both players chose ${playerSelection}; it's a tie!`
         }
     }
 
@@ -65,14 +66,14 @@ function playRound(playerSelection, computerSelection) {
         //possible outcomes based on computer choices
         if (computerSelection === 'scissors') {
             computerScore += 1
-            console.log(`${computerSelection} beats ${playerSelection}; the computer wins!`)
+            results.textContent = `${computerSelection} beats ${playerSelection}; the computer wins this round!`
         }
         else if (computerSelection === 'rock') {
             playerScore += 1
-            console.log(`${playerSelection} beats ${computerSelection}; you win!`)
+            results.textContent = `${playerSelection} beats ${computerSelection}; round player!`
         }
         else if (computerSelection === 'paper') {
-            console.log(`Both players chose ${playerSelection}; it's a tie!`)
+            results.textContent = `Both players chose ${playerSelection}; it's a tie!`
         }
         
     }
@@ -83,14 +84,14 @@ function playRound(playerSelection, computerSelection) {
         //possible outcomes based on computer choices
         if (computerSelection === 'rock') {
             computerScore += 1
-            console.log(`${computerSelection} beats ${playerSelection}; the computer wins!`)
+            results.textContent = `${computerSelection} beats ${playerSelection}; the computer take this round!`
         }
         else if (computerSelection === 'paper') {
             playerScore += 1
-            console.log(`${playerSelection} beats ${computerSelection}; you win!`)
+            results.textContent = `${playerSelection} beats ${computerSelection}; you win this one!`
         }
         else if (computerSelection === 'scissors') {
-            console.log(`Both players chose ${playerSelection}; it's a tie!`)
+            results.textContent = `Both players chose ${playerSelection}; it's a tie!`
         } 
     }
     p_score.textContent = playerScore;
