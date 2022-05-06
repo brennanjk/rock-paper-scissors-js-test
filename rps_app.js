@@ -20,9 +20,7 @@ const rock_button = document.querySelector('#rock');
 const paper_button = document.querySelector('#paper');
 const scissors_button = document.querySelector('#scissors');
 
-rock_button.addEventListener('click', () => {
-    alert('rock');
-})
+rock_button.addEventListener('click', playRound('rock',computerPlay()));
 
 paper_button.addEventListener('click', () => {
     alert('paper');
@@ -39,7 +37,7 @@ function playRound(playerSelection, computerSelection) {
     
     //if player chooses rock, check what the computer chose
     if (playerSelection === 'rock') {
-
+        
         //possible outcomes based on computer choices
         if (computerSelection === 'paper') {
             computerScore += 1
