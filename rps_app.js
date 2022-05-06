@@ -1,8 +1,8 @@
-/* Create global array variable for possible game selections*/
+// Create global array variable for possible game selections
 
 const choices = ['rock','paper','scissors'];
 
-/* Function (computerPlay) to choose a computer choice that randomly chooses from 'rock', 'paper', or 'scissors' and assign that choice to computerSelection variable*/
+// Function (computerPlay) to choose a computer choice that randomly chooses from 'rock', 'paper', or 'scissors' and assign that choice to computerSelection variable
 
 function computerPlay() {
     // generate random index between 0 and 2
@@ -16,8 +16,24 @@ function computerPlay() {
 playerScore = 0;
 computerScore = 0;
 
-/* Function (playRound) to play a single round. It should run the computerPlay function above to generate the computer's choice, plus prompt the user to enter a choice*/
-/* It should then compare the choices and determine/display the result */
+const rock_button = document.querySelector('#rock');
+const paper_button = document.querySelector('#paper');
+const scissors_button = document.querySelector('#scissors');
+
+rock_button.addEventListener('click', () => {
+    alert('rock');
+})
+
+paper_button.addEventListener('click', () => {
+    alert('paper');
+})
+
+scissors_button.addEventListener('click', () => {
+    alert('scissors');
+})
+
+// Function (playRound) to play a single round. It should run the computerPlay function above to generate the computer's choice, plus prompt the user to enter a choice
+// It should then compare the choices and determine/display the result 
 
 function playRound(playerSelection, computerSelection) {
     
