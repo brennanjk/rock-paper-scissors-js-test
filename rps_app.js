@@ -101,7 +101,6 @@ const playRound = (playerSelection, computerSelection) => {
     score_check();
 }
 
-
 function score_check() {
 
     if (playerScore === 5 || computerScore === 5) {
@@ -112,28 +111,32 @@ function score_check() {
         const p1 = document.createElement('p');
         p1.textContent = `You scored ${playerScore} points - the computer scored ${computerScore} points...`;
         end_game.appendChild(p1);
-        
-        paper_button.removeEventListener('click', () => {
-            playRound('paper',computerPlay());
-        })
-        
-        scissors_button.removeEventListener('click', () => {
-            playRound('scissors',computerPlay());
-        })
+        const p2 = document.createElement('p');
 
         if (playerScore === 5) {
-            const p2 = document.createElement('p');
             p2.textContent = `YOU HAVE WON THE GAME!`
             end_game.appendChild(p2);
         }
         else if (computerScore === 5) {
-            const p2 = document.createElement('p');
             p2.textContent = `THE COMPUTER HAS WON THE GAME!`
             end_game.appendChild(p2);
         }
-        
-    }   
-    //Add logic to reset both scores back to 0. This way if you play more than once the scores between games gets reset
-    //playerScore -= playerScore
-    //computerScore -= computerScore
+        const play_button = document.createElement('button');
+        play_button.classList.add("button");
+        play_button.textContent = "Play Again?";
+        end_game.appendChild(play_button);
+
+        play_button.addEventListener('click', () => {
+            buttons.appendChild(rock_button);
+            buttons.appendChild(paper_button);
+            buttons.appendChild(scissors_button);
+            end_game.removeChild(p1);
+            end_game.removeChild(p2);
+            end_game.removeChild(play_button);
+            playerScore = 0;
+            computerScore = 0;
+            p_score.textContent = playerScore;
+            c_score.textContent = computerScore;
+            })
+    }      
 }
