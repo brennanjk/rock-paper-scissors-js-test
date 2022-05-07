@@ -127,9 +127,9 @@ function score_check() {
         end_game.appendChild(play_button);
 
         play_button.addEventListener('click', () => {
-            buttons.appendChild(rock_button);
-            buttons.appendChild(paper_button);
-            buttons.appendChild(scissors_button);
+            buttons.insertBefore(rock_button, results);
+            buttons.insertBefore(paper_button, results);
+            buttons.insertBefore(scissors_button, results);
             end_game.removeChild(p1);
             end_game.removeChild(p2);
             end_game.removeChild(play_button);
@@ -137,6 +137,7 @@ function score_check() {
             computerScore = 0;
             p_score.textContent = playerScore;
             c_score.textContent = computerScore;
+            results.textContent = 'Back for more aye?';
             })
     }      
 }
