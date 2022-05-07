@@ -16,12 +16,14 @@ function computerPlay() {
 playerScore = 0;
 computerScore = 0;
 
+const buttons = document.querySelector('div.player-choice');
 const rock_button = document.querySelector('#rock');
 const paper_button = document.querySelector('#paper');
 const scissors_button = document.querySelector('#scissors');
 const results = document.querySelector('#results')
 const p_score = document.querySelector('#player-score');
 const c_score = document.querySelector('#computer-score')
+const end_game = document.querySelector('div.end-game')
 
 rock_button.addEventListener('click', () => {
     playRound('rock',computerPlay());
@@ -41,7 +43,7 @@ c_score.textContent = computerScore;
 // Function (playRound) to play a single round. It should run the computerPlay function above to generate the computer's choice, plus prompt the user to enter a choice
 // It should then compare the choices and determine/display the result 
 
-function playRound(playerSelection, computerSelection) {
+const playRound = (playerSelection, computerSelection) => {
     
     //if player chooses rock, check what the computer chose
     if (playerSelection === 'rock') {
@@ -49,7 +51,7 @@ function playRound(playerSelection, computerSelection) {
         //possible outcomes based on computer choices
         if (computerSelection === 'paper') {
             computerScore += 1
-            results.textContent = `${computerSelection} beats ${playerSelection}; round goes to computer!`
+            results.textContent = `${computerSelection} beats ${playerSelection}; round goes to the computer!`
         }
         else if (computerSelection === 'scissors') {
             playerScore += 1
@@ -84,7 +86,7 @@ function playRound(playerSelection, computerSelection) {
         //possible outcomes based on computer choices
         if (computerSelection === 'rock') {
             computerScore += 1
-            results.textContent = `${computerSelection} beats ${playerSelection}; the computer take this round!`
+            results.textContent = `${computerSelection} beats ${playerSelection}; the computer takes this round!`
         }
         else if (computerSelection === 'paper') {
             playerScore += 1
@@ -96,39 +98,42 @@ function playRound(playerSelection, computerSelection) {
     }
     p_score.textContent = playerScore;
     c_score.textContent = computerScore;
+    score_check();
 }
 
-/* Function (game) that calls our playRound function for a 5 round game. It will keep score and declare a winner at the end */
 
-function game() {
+function score_check() {
 
-    //loop so there are 5 rounds of play
+    if (playerScore === 5 || computerScore === 5) {
 
-    for (let i = 1; i < 6; i++) {
-        let playerSelection = prompt('Choose your play: rock, paper, or scissors: ').toLowerCase();
+        buttons.removeChild(rock_button);
+        buttons.removeChild(paper_button);
+        buttons.removeChild(scissors_button);       
+        const p1 = document.createElement('p');
+        p1.textContent = `You scored ${playerScore} points - the computer scored ${computerScore} points...`;
+        end_game.appendChild(p1);
+        
+        paper_button.removeEventListener('click', () => {
+            playRound('paper',computerPlay());
+        })
+        
+        scissors_button.removeEventListener('click', () => {
+            playRound('scissors',computerPlay());
+        })
 
-        // Check that input above matches one of the objects in our choices array; if not reprompt user before continuing
-        while (choices.indexOf(playerSelection) === -1) {
-            playerSelection = prompt('Invalid choice; please enter rock, paper, or scissors: ').toLowerCase()
+        if (playerScore === 5) {
+            const p2 = document.createElement('p');
+            p2.textContent = `YOU HAVE WON THE GAME!`
+            end_game.appendChild(p2);
         }
-        const computerSelection = computerPlay();
-    
-        console.log(playRound(playerSelection,computerSelection)); 
-    }
-
-    //compare scores and declare the winner or tie
-    if (playerScore > computerScore) {
-        console.log(`You scored ${playerScore} points, the computer scored ${computerScore} points: You win!`)
-    }
-    else if (computerScore > playerScore) {
-        console.log(`You scored ${playerScore} points, the computer scored ${computerScore} points: the computer win!`)
-    }
-    else {
-        console.log(`You scored ${playerScore} points, the computer scored ${computerScore} points: it's a tie!`)
-    }
-
+        else if (computerScore === 5) {
+            const p2 = document.createElement('p');
+            p2.textContent = `THE COMPUTER HAS WON THE GAME!`
+            end_game.appendChild(p2);
+        }
+        
+    }   
     //Add logic to reset both scores back to 0. This way if you play more than once the scores between games gets reset
-    playerScore -= playerScore
-    computerScore -= computerScore
-
+    //playerScore -= playerScore
+    //computerScore -= computerScore
 }
