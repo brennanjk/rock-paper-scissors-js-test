@@ -16,9 +16,11 @@ body {
 }
 
 .game-intro {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
     font-size: 20px;
     margin: 15px;
+    text-align: center;
 }
 
 .player-choice {
@@ -82,8 +84,4 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.footer {
-    text-align: center;
 }
