@@ -16,7 +16,7 @@ function computerPlay() {
 playerScore = 0;
 computerScore = 0;
 
-const buttons = document.querySelector('div.player-choice');
+const buttons = document.querySelector('div.button-container');
 const rock_button = document.querySelector('#rock');
 const paper_button = document.querySelector('#paper');
 const scissors_button = document.querySelector('#scissors');
@@ -127,9 +127,9 @@ function score_check() {
         end_game.appendChild(play_button);
 
         play_button.addEventListener('click', () => {
-            buttons.insertBefore(rock_button, results);
-            buttons.insertBefore(paper_button, results);
-            buttons.insertBefore(scissors_button, results);
+            buttons.appendChild(rock_button, results);
+            buttons.appendChild(paper_button, results);
+            buttons.appendChild(scissors_button, results);
             end_game.removeChild(p1);
             end_game.removeChild(p2);
             end_game.removeChild(play_button);

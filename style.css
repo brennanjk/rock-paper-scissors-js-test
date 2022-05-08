@@ -62,6 +62,13 @@ body {
     font-weight: bolder;
 }
 
+.end-game {
+    display:flex ;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .footer {
     text-align: center;
 }
