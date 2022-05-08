@@ -50,6 +50,15 @@ body {
     border-color: rgb(12, 14, 16);
     border-radius: 10px;
     flex: 1 1 0;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: rgb(30, 35, 43);
+    color: rgb(203, 162, 56);
+    width: 310px;
+    height: 108px;
+    border-color: rgb(183, 136, 42);
 }
 
 .scores {
