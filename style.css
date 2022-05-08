@@ -1,21 +1,21 @@
 body {
-    background-color: rgb(39, 25, 9);
-    color: rgb(252, 229, 186);
+    background-color: rgb(30, 35, 43);
+    color: rgb(212, 176, 59);
     font-family: 'Press Start 2P', cursive;
 }
 
 .header {
     padding: 50px 250px;
-    font-size: 25px;
+    font-size: 22px;
     border: 25px;
     border-style: dashed;
-    border-color: aliceblue;
+    border-color: rgb(183, 136, 42);
     text-align: center;
 }
 
 .game-intro {
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
     margin: 15px;
 }
 
@@ -24,7 +24,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     gap: 25px;
 }
@@ -43,11 +43,12 @@ body {
     font-family: 'Geostar', cursive;
     text-align: center;
     font-weight: bolder;
-    background-color: burlywood;
-    color: rgb(0, 0, 0);
+    background-color: rgb(203, 162, 56);
+    color: rgb(30, 35, 43);
     border: 7px;
     border-style: solid;
-    border-color: rgb(0, 0, 0);
+    border-color: rgb(12, 14, 16);
+    border-radius: 10px;
     flex: 1 1 0;
 }
 
@@ -55,7 +56,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 40px;
-    font-size: 30px;
+    font-size: 27px;
     font-weight: bolder;
 }
 
