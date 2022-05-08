@@ -5,12 +5,14 @@ body {
 }
 
 .header {
+    display: flex;
+    justify-content: center;
+    flex-shrink: 1;
     padding: 50px 250px;
-    font-size: 22px;
+    font-size: 100%;
     border: 25px;
     border-style: dashed;
     border-color: rgb(183, 136, 42);
-    text-align: center;
 }
 
 .game-intro {
@@ -33,6 +35,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 50px;
 }
 
