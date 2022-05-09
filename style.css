@@ -71,12 +71,17 @@ body {
     box-shadow: inset 0px 0px 5px #c1c1c1;
 }
 
-.scores {
+.scores-container {
     display: flex;
     justify-content: center;
+}
+
+.scores {
+    display: flex;
     gap: 40px;
     font-size: 27px;
     font-weight: bolder;
+    width: 500px;
 }
 
 .end-game {
@@ -89,12 +94,15 @@ body {
 @media (max-width: 500px) {
     .game-intro,
     .player-choice,
-    .scores,
     .end-game {
         margin-left: 11em;
         font-size: .90em;
     }
     .header {
         font-size: .90em;
+    }
+    .scores {
+        margin-left: 11em;
+        font-size: .75em;
     }
 }
