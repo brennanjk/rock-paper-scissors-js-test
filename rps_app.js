@@ -115,12 +115,13 @@ function score_check() {
 
         if (playerScore === 5) {
             p2.textContent = `YOU HAVE WON THE GAME!`
-            end_game.appendChild(p2);
+            buttons.appendChild(p2);
         }
         else if (computerScore === 5) {
             p2.textContent = `THE COMPUTER HAS WON THE GAME!`
-            end_game.appendChild(p2);
+            buttons.appendChild(p2);
         }
+        p2.style.fontSize = '30px';
         const play_button = document.createElement('button');
         play_button.classList.add("button");
         play_button.textContent = "Play Again?";
@@ -131,7 +132,7 @@ function score_check() {
             buttons.appendChild(paper_button, results);
             buttons.appendChild(scissors_button, results);
             end_game.removeChild(p1);
-            end_game.removeChild(p2);
+            buttons.removeChild(p2);
             end_game.removeChild(play_button);
             playerScore = 0;
             computerScore = 0;
